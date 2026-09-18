@@ -30,7 +30,7 @@ public class SignUp {
         System.out.println("Please enter your password (min 8 chars, 1 capital, 1 number, 1 special): ");
         String regPassword = scanner.nextLine();
         
-        System.out.println("Please enter phone number (e.g., +27838968520");
+        System.out.println("Please enter phone number (e.g., +27838968520) :");
         String regCellPhone = scanner.nextLine();
         
         String registrationMessage = loginSystem.registerUser(regUsername, regPassword, regCellPhone);
