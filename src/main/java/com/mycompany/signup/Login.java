@@ -41,6 +41,11 @@ class Login {
         return hasUpper && hasSpecail;
     }
     
+    public boolean checkCellPhoneNumber(String cellPhone) {
+        if (cellPhone == null) return false;
+        return cellPhone.matches("^\\[0-9]{9}$");
+    }
+    
     
     
 }
