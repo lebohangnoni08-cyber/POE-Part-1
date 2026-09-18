@@ -46,6 +46,28 @@ class Login {
         return cellPhone.matches("^\\[0-9]{9}$");
     }
     
+    public String registerUser(String username, String password, String cellPhone) {
+        if (!checkUserName(username)){
+            return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
+        }
+        if (!checkPasswordComplexity(password)){
+            return "Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number and a special character.";
+        }
+        if (!checkCellPhoneNumber(cellPhone)){
+            return "Phone number is incorrectly formatted or does not contain an international code; please correct the number and try again.";
+        }
+        
+        this.storedUsername = username;
+        this.storedPassword = password;
+        this.storedCellPhone = cellPhone;
+        
+        return "Username successfully captured. \n Password successfully captured. \n Cell phone number successfully captured.";   
+
+    }
     
-    
+    public boolean loginUser(String username, String password) {
+        return username.equals(storedUsername) && password.equals(storedPassword);
+    }
 }
+    
+    
