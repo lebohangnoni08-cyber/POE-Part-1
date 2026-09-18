@@ -68,6 +68,14 @@ class Login {
     public boolean loginUser(String username, String password) {
         return username.equals(storedUsername) && password.equals(storedPassword);
     }
+    
+    public String returnLoginStatus(boolean loginStatus) {
+        if (loginStatus){
+            return "Welcome " + firstName + ", " + lastName + "it is great to see you again.";
+        } else {
+            return "Username or password is incorrect, please try again.";    
+        }
+    }
 }
     
     
